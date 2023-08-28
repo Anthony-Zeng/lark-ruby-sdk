@@ -43,6 +43,16 @@ module Lark
       def delete_chat(chat_id)
         delete "im/v1/chats/#{chat_id}"
       end
+
+      #获取用户或机器人所在的群列表
+      def get_chats(user_id_type: :open_id, sort_type: :ByCreateTimeAsc, page_token: nil, page_size: nil)
+        get 'im/chats', params: {
+          user_id_type: user_id_type,
+          sort_type: sort_type,
+          page_token: page_token,
+          page_size: page_size
+        }.compact
+      end
     end
   end
 end
