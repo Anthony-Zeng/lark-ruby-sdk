@@ -46,7 +46,7 @@ module Lark
 
       #获取用户或机器人所在的群列表
       def get_chats(user_id_type: :open_id, sort_type: :ByCreateTimeAsc, page_token: nil, page_size: nil)
-        get 'im/chats', params: {
+        get 'im/v1/chats', params: {
           user_id_type: user_id_type,
           sort_type: sort_type,
           page_token: page_token,
